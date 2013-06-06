@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!-- vim: set expandtab softtabstop=2 shiftwidth=2 tabstop=8: -->
+<ruleset name="Lousson">
+
+  <description>The Lousson Project's coding standard</description>
+
+  <!--
+    The Lousson Project's coding standard derives directly from PSR1
+    (https://github.com/php-fig/fig-standards) -->
+  <rule ref="PSR1"/>
+
+  <!--
+    All PHP files MUST use the Unix LF (linefeed) line ending.
+    Windows CR/LF and clasic Mac CR endings are prohibited -->
+  <rule ref="Generic.Files.LineEndings">
+    <properties>
+      <property name="eolChar" value="\n"/>
+    </properties>
+  </rule>
+
+  <!--
+    The closing ?> tag MUST be omitted from files where the last
+    section is a PHP block (and no HTML code, for example). Instead,
+    all those files MUST end with a signle blank line -->
+  <rule ref="Zend.Files.ClosingTag"/>
+
+  <!--
+    All lines SHOULD NOT consist of more than 75 characters.
+    This leaves enough space for line numbers and a separator,
+    even on most terminals. The hard-limit each line MUST NOT
+    exceed, however, is 120 characters -->
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="75"/>
+      <property name="absoluteLineLimit" value="120"/>
+    </properties>
+  </rule>
+
+  <!--
+    There MUST NOT be any trailing whitespace at the end
+    of any line. One shall Use their encoded form in case
+    this becomes necessary anywere -->
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+
+  <!--
+    There MUST NOT be more than one statement per line -->
+  <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+
+  <!--
+    All code MUST use an indent of 4 spaces, and MUST NOT use
+    tabs for indenting -->
+  <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+  <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+
+  <!--
+    All PHP keywords MUST be in lower case -->
+  <rule ref="Generic.PHP.LowerCaseKeyword"/>
+  <rule ref="Generic.PHP.LowerCaseConstant"/>
+
+  <!--
+    When present, there MUST be one blank line after the namespace
+    declaration -->
+  <rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+
+  <!--
+    When present, all use declarations MUST go after the namespace
+    declaration. There MUST be one use keyword per declaration and
+    there MUST be one blank line after the use block -->
+  <rule ref="PSR2.Namespaces.UseDeclaration"/>
+
+  <!--
+    Visibility MUST be declared on all properties, the "var" keyword
+    is prohibited. There MUST NOT be more than one property declared
+    per statement. Property names SHOULD NOT be prefixed with a single
+    underscore to indicate protected or private visibility -->
+  <rule ref="PSR2.Classes.PropertyDeclaration"/>
+
+  <!--
+    Visibility MUST be declared on all methods -->
+  <rule ref="Squiz.Scope.MethodScope"/>
+  <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+
+  <!--
+    Method names SHOULD NOT be prefixed with a single underscore to
+    indicate protected or private visibility.
+    When present, the abstract and final declarations MUST precede the
+    visibility declaration. When present, the static declaration MUST
+    come after the visibility declaration -->
+  <rule ref="PSR2.Methods.MethodDeclaration"/>
+
+  <!--
+    Method names MUST NOT be declared with a space after the method
+    name. The opening brace MUST go on its own line, and the closing
+    brace MUST go on the next line following the body. There MUST NOT
+    be a space after the opening parenthesis, and there MUST NOT be a
+    space before the closing parenthesis -->
+  <rule ref="Squiz.Functions.FunctionDeclaration"/>
+  <rule ref="Squiz.Functions.LowercaseFunctionKeywords"/>
+
+  <!--
+    In the argument list, there MUST NOT be a space before each comma,
+    and there MUST be one space after each comma -->
+  <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+    <properties>
+      <property name="equalsSpacing" value="1"/>
+    </properties>
+  </rule>
+
+  <!--
+    Method arguments with default values MUST go at the end of the
+    argument list -->
+  <rule ref="PEAR.Functions.ValidDefaultValue"/>
+
+  <!--
+    When making a method or function call, there MUST NOT be a space
+    between the method or function name and the opening parenthesis,
+    there MUST NOT be a space after the opening parenthesis, and there
+    MUST NOT be a space before the closing parenthesis. In the argument
+    list, there MUST NOT be a space before each comma, and there MUST
+    be one space after each comma -->
+  <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+
+  <!--
+    Argument lists MAY be split across multiple lines, where each
+    subsequent line is indented once. When doing so, the first item
+    in the list MUST be on the next line -->
+  <rule ref="PEAR.Functions.FunctionCallSignature">
+    <properties>
+      <property name="allowMultipleArguments" value="true"/>
+    </properties>
+  </rule>
+
+  <!--
+    The general style rules for control structures are as follows:
+    There MUST be one space after the control structure keyword, there
+    MUST NOT be a space after the opening parenthesis, there MUST NOT
+    be a space before the closing parenthesis, there MUST be one space
+    between the closing parenthesis and the opening brace, the structure
+    body MUST be indented once, and the closing brace MUST be on the next
+    line after the body -->
+  <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
+  <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
+  <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
+  <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
+
+  <!--
+    Within this standard there are some rather exotic control
+    structure patterns white-listed within the implementation of the
+    Lousson_Sniffs_ControlStructures_ControlSignatureSniff -->
+  <rule ref="Lousson.ControlStructures.ControlSignature"/>
+
+</ruleset>
