@@ -55,7 +55,7 @@ Copyright & License
 -------------------
 
 Unless denoted otherwise, the following terms apply to all software
-provided within the `Loussrn_Sniffs` package:
+provided within the `Lousson_Sniffs` package:
 
 	Copyright (c) 2013, The Lousson Project
 
